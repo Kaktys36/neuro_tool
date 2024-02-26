@@ -9,8 +9,6 @@ if "show_start_page" not in session_status:
     session_status.show_start_page = True
     session_status.show_info = False
 
-if session_status.show_start_page:
-
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO8_face_detecton']
 selected_model = st.selectbox('Выберите модель: ', models)
 
