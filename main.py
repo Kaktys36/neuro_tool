@@ -17,14 +17,17 @@ if session_status.show_start_page:
 
     session_status.show_start_page = False
 
-models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO_face_detecton']
+models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO8_face_detecton']
 
-if session_status.show_start_page:
+
+if not session_status.show_start_page:
     selected_model = st.selectbox('Выберите модель: ', models)
 
     if selected_model == 'GPT 3.5_turbo':
         chat_bot = ChatBot()
         chat_bot.run()
+        st.title('')
+        st.subheader('')
 
     elif selected_model == 'YOLO_face_detecton':
         face_detector = FaceDetector()
