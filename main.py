@@ -17,8 +17,7 @@ if session_status.show_start_page:
 
     #session_status.show_start_page = False
 elif not session_status.show_start_page:
-    st.title('')
-    st.subheader("")
+    pass
 
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO8_face_detecton']
 
