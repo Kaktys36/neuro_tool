@@ -1,16 +1,16 @@
 import streamlit as st
 
-def info_func(info, session_status):    
-    if session_status.show_start_page:
+def info_func(info, show_info, show_start_page):    
+    if show_start_page:
         info_btn = st.button('Показать/Скрыть информацию о проекте')
 
         if info_btn:
-            if 'show_info' not in session_status or not session_status.show_info:
-                session_status.show_info = True
+            if show_info == False:
+                show_info = True
             else:
-                session_status.show_info = False
+                show_info = False
 
-        if session_status.show_info:
+        if show_info:
             infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность']
             selected_info = st.selectbox('Информация о проекте.', infos, index=0)
 

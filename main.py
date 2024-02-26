@@ -32,5 +32,4 @@ else:
     st.title('')
     st.subheader('')
 
-
-#info_func(info, session_status)
+info_func(info, show_info, show_start_page)
