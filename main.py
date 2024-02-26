@@ -4,7 +4,6 @@ from YOLO_face_detection import FaceDetector
 from info_script import info_func
 from info_data import info
 
-# Инициализация сессионного состояния
 session_status = st.session_state
 if "show_start_page" not in session_status:
     session_status.show_start_page = True
@@ -17,10 +16,10 @@ if session_status.show_start_page:
 
     #session_status.show_start_page = False
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO8_face_detecton']
+selected_model = st.selectbox('Выберите модель: ', models)
 
 if session_status.show_start_page:
-    selected_model = st.selectbox('Выберите модель: ', models)
-
+    
     if selected_model == 'GPT 3.5_turbo':
         chat_bot = ChatBot()
         chat_bot.run()
