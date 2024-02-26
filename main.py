@@ -8,7 +8,7 @@ if show_start_page:
     st.title('Neuro_tool_v.1.1')
     st.subheader(
        'Это проект "Нейросетевого мультитула". Суть в том, что здесь \
-        собраны воедино несколько нейросетевых инструментов. \
+        собраны воедино несколько нейросетевых инструментов. \n \
         Для выбора модели используй выпадающий список.')
 
 models = ['GPT 3.5_turbo', 'YOLO_face_detecton']
@@ -32,7 +32,14 @@ elif selected_model == 'YOLO_face_detecton':
         show_start_page = False
         st.rerun()
 
+infos = ['Манифест', 'Поддержать проект']
 selected_info = st.selectbox('Информация о проекте.', info)
 
 if selected_info == 'Манифест':
     st.write(info[0])
+elif selected_info == 'Поддержать проект':
+    st.write(info[1])
+elif selected_info == 'Контакты':
+    st.write(info[2])
+elif selected_info == 'Последние обновления':
+    st.write(info[3])
