@@ -4,9 +4,6 @@ def click_button():
     st.session_state.button = not st.session_state.button
 
 def info_func(info, show_info, show_start_page):    
-    if 'button' not in st.session_state:
-        st.session_state.button = False
-
     if show_start_page:
         info_btn = st.button('Показать/Скрыть информацию о проекте', on_click=click_button)
         print(info_btn)
