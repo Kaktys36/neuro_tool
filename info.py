@@ -23,20 +23,21 @@ requisites = '''
 
 contacts = '''
             Сюда можно обратиться за тех.поддержкой, 
-            просто поболтать или предложить добавить новую фичу:\n
-            Telegram: @KiloLex \n
-            email: nikolaeff.alexandr2016@yandex.ru \n
-            Github: https://github.com/Kaktys36 \n
-            Github проекта: https://github.com/Kaktys36/neuro_tool
+            просто поболтать или предложить добавить новую фичу:
+            \tTelegram: @KiloLex 
+            \temail: nikolaeff.alexandr2016@yandex.ru 
+            \tDiscord: sputnik2286
+            \tGithub: https://github.com/Kaktys36 
+            \tGithub проекта: https://github.com/Kaktys36/neuro_tool
             '''
 
 update_info = '''
-               \n\t26.02.2024 "neurotool_v.1.1".
+               \t26.02.2024 "neurotool_v.1.1".
                Проект обрёл имя, манифест, добавлена контактная иформация и реквизиты.
                Добавлена функция переключения моделей.
                Добавлена модель YOLO8 с функцией детекции и подсчёта количества лиц на фотографии.\n
-               \t31 Dec 2023 "openai_chat_clone". 
-               Зарождение проекта. Перваая рабочая проба пера, представляющая из 
+               \t31 Dec 2023 "openai_chat_clone".
+               Зарождение проекта. Перваая рабочая проба пера, представляющая из
                себя рабочий GPT 3.5 turbo без необходимости VPN, авторизации и т.п.
                '''
 
