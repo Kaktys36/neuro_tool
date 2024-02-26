@@ -27,8 +27,8 @@ elif selected_model == 'YOLO_face_detecton':
 
 st.session_state.show_start_page = False
 
-st.button("Показать информацию о проекте")
-if st.button_clicked("Показать информацию о проекте"):
+info_btn = st.button("Показать информацию о проекте")
+if info_btn:
     st.session_state.show_info = True
 
 if st.session_state.show_info:
