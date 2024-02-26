@@ -17,25 +17,25 @@ manifest = '''
 
 requisites = '''
               В данных момент доступны следующие способы: \n
-              Номер карты (Сбер, СБП): 2202201869695284 \n
+              Номер карты (Сбер, СБП): 2202201869695284 
               При переводе просьба указывать коментарий "neurotool".
              '''
 
 contacts = '''
             Сюда можно обратиться за тех.поддержкой, 
             просто поболтать или предложить добавить новую фичу:\n
-            Telegram: @KiloLex 
-            email: nikolaeff.alexandr2016@yandex.ru 
-            github: https://github.com/Kaktys36 
-            github проекта: https://github.com/Kaktys36/neuro_tool
+            Telegram: @KiloLex \n
+            email: nikolaeff.alexandr2016@yandex.ru \n
+            Github: https://github.com/Kaktys36 \n
+            Github проекта: https://github.com/Kaktys36/neuro_tool
             '''
 
 update_info = '''
-                26.02.2024 "neurotool_v.1.1".
+               \t26.02.2024 "neurotool_v.1.1".
                Проект обрёл имя, манифест, добавлена контактная иформация и реквизиты.
                Добавлена функция переключения моделей.
-               Добавлена модель YOLO8 с функцией детекции и подсчёта количества лиц на фотографии
-               31 Dec 2023 "openai_chat_clone". 
+               Добавлена модель YOLO8 с функцией детекции и подсчёта количества лиц на фотографии.\n
+               \t31 Dec 2023 "openai_chat_clone". 
                Зарождение проекта. Перваая рабочая проба пера, представляющая из 
                себя рабочий GPT 3.5 turbo без необходимости VPN, авторизации и т.п.
                '''
