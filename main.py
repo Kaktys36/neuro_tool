@@ -14,7 +14,7 @@ if show_start_page:
     st.title('Neuro_tool_v.1.1')
     st.subheader(
        'Это проект "Нейросетевого мультитула". Суть в том, что здесь собраны воедино несколько нейросетевых инструментов. Всё доступно каждому и абсолютно бесплатно (подробнее в информация_о_проекте>манифест).')
-    
+
     if selected_model == 'GPT 3.5_turbo':
         chat_bot = ChatBot()
         chat_bot.run()
@@ -27,6 +27,7 @@ if show_start_page:
 
     else:
         show_start_page = True
+
 if not show_start_page:
     st.title('')
     st.subheader('')
