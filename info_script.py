@@ -1,5 +1,6 @@
 import streamlit as st
 
+# Инициализация переменной button в st.session_state
 if 'button' not in st.session_state:
     st.session_state.button = False
 
@@ -8,7 +9,7 @@ def click_button():
 
 def info_func(info, show_info, show_start_page):    
     if show_start_page:
-        info_btn = st.session_state.button('Показать/Скрыть информацию о проекте', on_click=click_button)
+        info_btn = st.button('Показать/Скрыть информацию о проекте', on_click=click_button)
         print(info_btn)
 
         if info_btn:
@@ -33,3 +34,5 @@ def info_func(info, show_info, show_start_page):
                 st.text(info[4])
         else:
             pass
+
+    return show_info
