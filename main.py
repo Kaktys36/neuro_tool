@@ -27,7 +27,7 @@ if session_status.show_start_page:
         face_detector.run()
         session_status.show_start_page = False
 
-    elif selected_model == 'Выбрать модель':
+    elif:
         session_status.show_start_page = True
 
 info_func(info, session_status)
