@@ -2,6 +2,7 @@ import streamlit as st
 from open_ai_gpt import ChatBot
 from YOLO_face_detection import FaceDetector
 from info_script import info_func
+from info_data import info
 
 # Инициализация сессионного состояния
 session_status = st.session_state
@@ -16,7 +17,7 @@ if st.session_state.show_start_page:
         собраны воедино несколько нейросетевых инструментов. \n
         Всё доступно каждому и абсолютно бесплатно (подробнее в информация о проекте>манифест).
         ''')
-    info_func()
+    info_func(info, session_status)
 
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO_face_detecton']
 selected_model = st.selectbox('Выберите модель: ', models)
