@@ -10,10 +10,6 @@ show_info = True
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO8_face_detecton']
 selected_model = st.selectbox('Выберите модель: ', models)
 
-if show_start_page:
-    st.title('Neuro_tool_v.1.1')
-    st.subheader(
-       'Это проект "Нейросетевого мультитула". Суть в том, что здесь собраны воедино несколько нейросетевых инструментов. Всё доступно каждому и абсолютно бесплатно (подробнее в информация_о_проекте>манифест).')
 
 if selected_model == 'GPT 3.5_turbo':
     chat_bot = ChatBot()
@@ -31,5 +27,11 @@ else:
 if not show_start_page:
     st.title('')
     st.subheader('')
+
+if show_start_page:
+    st.title('Neuro_tool_v.1.1')
+    st.subheader(
+       'Это проект "Нейросетевого мультитула". Суть в том, что здесь собраны воедино несколько нейросетевых инструментов. Всё доступно каждому и абсолютно бесплатно (подробнее в информация_о_проекте>манифест).')
+
 
 #info_func(info, session_status)
