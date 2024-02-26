@@ -1,6 +1,6 @@
 streamlit
 openai
 huggingface_hub
-PIL
+Pillow
 supervision
 ultralytics
