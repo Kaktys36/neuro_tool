@@ -1,3 +1,6 @@
+import streamlit as st
+
+from openai import OpenAI
 class ChatBot:
     def __init__(self):
         self.client = OpenAI(api_key=st.secrets["API_KEY"])
