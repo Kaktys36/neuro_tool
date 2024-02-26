@@ -2,6 +2,5 @@ streamlit
 openai
 huggingface_hub
 Pillow
-cv2
 supervision
 ultralytics
