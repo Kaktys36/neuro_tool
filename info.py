@@ -30,3 +30,5 @@ update_info = '\
                \t31 Dec 2023 "openai_chat_clone". Зарождение проекта. Перваая рабочая проба пера, представляющая из \
                себя рабочий GPT 3.5 turbo без необходимости VPN, авторизации и т.п. \n \
                '
+
+info = [manifest, requisites, contacts, update_info]
