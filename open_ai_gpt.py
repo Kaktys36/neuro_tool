@@ -6,8 +6,8 @@ class ChatBot:
         self.client = OpenAI(api_key=st.secrets["API_KEY"])
 
     def run(self):
-        st.title("Персональный помощник на основе ChatGPT")
-        st.subheader("Я могу писать конспекты, решать математические задачи, написать с нуля эссе на любую тему и многое другое!")
+        st.title('ChatGPT 3.5 turbo')
+        st.subheader('Я могу писать конспекты, решать математические задачи, написать с нуля эссе на любую тему и многое другое!')
 
         if "openai_model" not in st.session_state:
             st.session_state["openai_model"] = "gpt-3.5-turbo"
