@@ -14,20 +14,24 @@ if st.session_state.show_start_page:
        'Это проект "Нейросетевого мультитула". Суть в том, что здесь \
         собраны воедино несколько нейросетевых инструментов. Всё доступно каждому и абсолютно бесплатно (подробнее в манифесте).')
 
-    models = ['GPT 3.5_turbo', 'YOLO_face_detecton']
-    selected_model = st.selectbox('Выберите модель: ', models)
+models = ['GPT 3.5_turbo', 'YOLO_face_detecton']
+selected_model = st.selectbox('Выберите модель: ', models)
 
-    if selected_model == 'GPT 3.5_turbo':
-        chat_bot = ChatBot()
-        chat_bot.run()
+if selected_model == 'GPT 3.5_turbo':
+    chat_bot = ChatBot()
+    chat_bot.run()
 
-    elif selected_model == 'YOLO_face_detecton':
-        face_detector = FaceDetector()
-        face_detector.run()
+elif selected_model == 'YOLO_face_detecton':
+    face_detector = FaceDetector()
+    face_detector.run()
 
-    st.session_state.show_start_page = False
+st.session_state.show_start_page = False
 
-elif st.session_state.show_info:
+st.button("Показать информацию о проекте")
+if st.button_clicked("Показать информацию о проекте"):
+    st.session_state.show_info = True
+
+if st.session_state.show_info:
     infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность']
     selected_info = st.selectbox('Информация о проекте.', infos)
 
@@ -41,10 +45,3 @@ elif st.session_state.show_info:
         st.text(info[3])
     elif selected_info == 'Выражаю благодарность':
         st.text(info[4])
-
-    st.session_state.show_info = False
-
-else:
-    st.button("Показать информацию о проекте")
-    if st.button_clicked("Показать информацию о проекте"):
-        st.session_state.show_info = True
