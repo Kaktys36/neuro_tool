@@ -34,4 +34,3 @@ def info_func(info, show_info, show_start_page):
         else:
             pass
 
-    return show_info
