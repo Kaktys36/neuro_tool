@@ -31,7 +31,7 @@ elif selected_model == 'YOLO_face_detecton':
         show_start_page = False
         st.rerun()
 
-infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления']
+infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность']
 selected_info = st.selectbox('Информация о проекте.', infos)
 
 if selected_info == 'Манифест':
@@ -42,3 +42,5 @@ elif selected_info == 'Контакты':
     st.text(info[2])
 elif selected_info == 'Последние обновления':
     st.text(info[3])
+elif selected_info == 'Выражаю благодарность':
+    st.text(info[4])
