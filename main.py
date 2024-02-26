@@ -4,7 +4,8 @@ from YOLO_face_detection import FaceDetector
 from info_script import info_func
 
 # Инициализация сессионного состояния
-if "show_start_page" not in st.session_state:
+session_status = st.session_state
+if "show_start_page" not in st.session_status:
     st.session_state.show_start_page = True
     st.session_state.show_info = False
 
