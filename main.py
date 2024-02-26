@@ -16,6 +16,9 @@ if session_status.show_start_page:
        'Это проект "Нейросетевого мультитула". Суть в том, что здесь собраны воедино несколько нейросетевых инструментов. Всё доступно каждому и абсолютно бесплатно (подробнее в информация_о_проекте>манифест).')
 
     #session_status.show_start_page = False
+elif not session_status.show_start_page:
+    st.title('')
+    st.subheader("")
 
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO8_face_detecton']
 
