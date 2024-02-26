@@ -24,3 +24,5 @@ def info_func(info, session_status):
             st.text(info[3])
         elif selected_info == 'Выражаю благодарность':
             st.text(info[4])
+    else:
+        pass
