@@ -17,7 +17,7 @@ if st.session_state.show_start_page:
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO_face_detecton']
 selected_model = st.selectbox('Выберите модель: ', models)
 
-if selected_model == 'Выбрать модель'Ж
+if selected_model == 'Выбрать модель':
     pass
 
 elif selected_model == 'GPT 3.5_turbo':
