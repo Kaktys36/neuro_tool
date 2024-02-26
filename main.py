@@ -35,7 +35,7 @@ infos = ['Манифест', 'Поддержать проект', 'Контак�
 selected_info = st.selectbox('Информация о проекте.', infos)
 
 if selected_info == 'Манифест':
-    st.write(info[0], unsafe_allow_html=True)
+    st.text(info[0])
 elif selected_info == 'Поддержать проект':
     st.write(info[1])
 elif selected_info == 'Контакты':
