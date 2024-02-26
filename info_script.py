@@ -1,15 +1,17 @@
 import streamlit as st
+def click_button():
+    st.session_state.clicked = True
 
 def info_func(info, show_info, show_start_page):    
+    if 'clicked' not in st.session_state:
+    st.session_state.clicked = False
     if show_start_page:
-        info_btn = st.button('Показать/Скрыть информацию о проекте')
-        st.write(info_btn)
-
+        info_btn = st.button('Показать/Скрыть информацию о проекте', on_click=click_button)
+        print(info_btn)
         if info_btn:
-            if show_info == False:
-                show_info = True
-            elif show_info == True:
-                show_info = False
+            show_info = True
+        elif info_btn == False:
+            show_info = False
 
         if show_info:
             infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность']
