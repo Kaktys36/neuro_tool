@@ -37,8 +37,8 @@ selected_info = st.selectbox('Информация о проекте.', infos)
 if selected_info == 'Манифест':
     st.text(info[0])
 elif selected_info == 'Поддержать проект':
-    st.write(info[1])
+    st.text(info[1])
 elif selected_info == 'Контакты':
-    st.write(info[2])
+    st.text(info[2])
 elif selected_info == 'Последние обновления':
-    st.write(info[3])
+    st.text(info[3])
