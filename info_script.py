@@ -2,7 +2,7 @@ from info_data import info
 from main import session_status
 import streamlit as st
 
-def info_func(infos, session_state_main, session_state_show_info):    
+def info_func(infos, session_status):    
     info_btn = st.button('Показать/Скрыть информацию о проекте')
 
     if info_btn:
