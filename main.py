@@ -19,7 +19,7 @@ if session_status.show_start_page:
 
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO_face_detecton']
 
-if not session_status.show_start_page:
+if session_status.show_start_page:
     selected_model = st.selectbox('Выберите модель: ', models)
 
     if selected_model == 'GPT 3.5_turbo':
