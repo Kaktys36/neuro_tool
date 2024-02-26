@@ -6,11 +6,11 @@ def info_func(info, session_status):
 
         if info_btn:
             if 'show_info' not in session_status or not session_status.show_info:
-                st.session_state.show_info = True
+                session_status.show_info = True
             else:
-                st.session_state.show_info = False
+                session_status.show_info = False
 
-        if st.session_state.show_info:
+        if session_status.show_info:
             infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность']
             selected_info = st.selectbox('Информация о проекте.', infos, index=0)
 
