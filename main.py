@@ -7,7 +7,7 @@ from info_data import info
 show_start_page = True
 show_info = False
 
-models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO8_face_detecton']
+models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO8_face_detector']
 selected_model = st.selectbox('Выберите модель: ', models)
 
 
