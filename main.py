@@ -32,7 +32,7 @@ if info_btn:
     st.session_state.show_info = True
     info_btn = st.button('Скрыть информацию о проекте')
     if info_btn:
-    st.session_state.show_info = False
+        st.session_state.show_info = False
 
 
 if st.session_state.show_info:
