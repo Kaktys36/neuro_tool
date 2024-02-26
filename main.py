@@ -1,7 +1,7 @@
 import streamlit as st
 from open_ai_gpt import ChatBot
 from YOLO_face_detection import FaceDetector
-from info import info
+from info_script import info_func
 
 # Инициализация сессионного состояния
 if "show_start_page" not in st.session_state:
@@ -13,8 +13,9 @@ if st.session_state.show_start_page:
     st.subheader(
        '''Это проект "Нейросетевого мультитула". Суть в том, что здесь \
         собраны воедино несколько нейросетевых инструментов. \n
-        Всё доступно каждому и абсолютно бесплатно (подробнее в манифесте).
+        Всё доступно каждому и абсолютно бесплатно (подробнее в информация о проекте>манифест).
         ''')
+    info_func()
 
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO_face_detecton']
 selected_model = st.selectbox('Выберите модель: ', models)
@@ -32,25 +33,3 @@ elif selected_model == 'YOLO_face_detecton':
 
 st.session_state.show_start_page = False
 
-info_btn = st.button('Показать/Скрыть информацию о проекте')
-if info_btn:
-    if 'show_info' not in st.session_state or not st.session_state.show_info:
-        st.session_state.show_info = True
-    else:
-        st.session_state.show_info = False
-
-
-if st.session_state.show_info:
-    infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность']
-    selected_info = st.selectbox('Информация о проекте.', infos)
-
-    if selected_info == 'Манифест':
-        st.text(info[0])
-    elif selected_info == 'Поддержать проект':
-        st.text(info[1])
-    elif selected_info == 'Контакты':
-        st.text(info[2])
-    elif selected_info == 'Последние обновления':
-        st.text(info[3])
-    elif selected_info == 'Выражаю благодарность':
-        st.text(info[4])
