@@ -19,19 +19,17 @@ if session_status.show_start_page:
         ''')
     info_func(info, session_status)
 
+    session_status.show_start_page = False
+
 models = ['Выбрать модель', 'GPT 3.5_turbo', 'YOLO_face_detecton']
-selected_model = st.selectbox('Выберите модель: ', models)
 
-if selected_model == 'Выбрать модель':
-    pass
+if not session_status.show_start_page:
+    selected_model = st.selectbox('Выберите модель: ', models)
 
-elif selected_model == 'GPT 3.5_turbo':
-    chat_bot = ChatBot()
-    chat_bot.run()
+    if selected_model == 'GPT 3.5_turbo':
+        chat_bot = ChatBot()
+        chat_bot.run()
 
-elif selected_model == 'YOLO_face_detecton':
-    face_detector = FaceDetector()
-    face_detector.run()
-
-session_status.show_start_page = False
-
+    elif selected_model == 'YOLO_face_detecton':
+        face_detector = FaceDetector()
+        face_detector.run()
