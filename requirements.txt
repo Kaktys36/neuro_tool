@@ -1,0 +1,6 @@
+streamlit
+openai
+huggingface_hub
+PIL
+supervision
+ultralytics
