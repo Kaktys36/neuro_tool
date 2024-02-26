@@ -2,5 +2,6 @@ streamlit
 openai
 huggingface_hub
 Pillow
+libgl1-mesa-glx
 supervision
 ultralytics
