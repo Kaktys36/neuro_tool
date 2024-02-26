@@ -1,10 +1,8 @@
 import streamlit as st
 
-# Инициализация переменной button в st.session_state
-if 'button' not in st.session_state:
-    st.session_state.button = False
-
 def click_button():
+    if 'button' not in st.session_state:
+        st.session_state.button = False
     st.session_state.button = not st.session_state.button
 
 def info_func(info, show_info, show_start_page):    
