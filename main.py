@@ -16,7 +16,7 @@ if selected_model == 'GPT 3.5_turbo':
     chat_bot.run()
     show_start_page = False
 
-elif selected_model == 'YOLO8_face_detecton':
+elif selected_model == 'YOLO8_face_detector':
     face_detector = FaceDetector()
     face_detector.run()
     show_start_page = False
