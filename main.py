@@ -27,7 +27,7 @@ if show_start_page:
 
     else:
         show_start_page = True
-elif not show_start_page:
+if not show_start_page:
     st.title('')
     st.subheader('')
 
