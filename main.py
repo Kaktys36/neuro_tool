@@ -13,9 +13,9 @@ if "show_start_page" not in session_status:
 if session_status.show_start_page:
     st.title('Neuro_tool_v.1.1')
     st.subheader(
-       '''Это проект "Нейросетевого мультитула". Суть в том, что здесь \
-        собраны воедино несколько нейросетевых инструментов. \n
-        Всё доступно каждому и абсолютно бесплатно (подробнее в информация о проекте>манифест).
+       '''Это проект "Нейросетевого мультитула". Суть в том, что здесь 
+        собраны воедино несколько нейросетевых инструментов. 
+        Всё доступно каждому и абсолютно бесплатно (подробнее в информация_о_проекте>манифест).
         ''')
     #info_func(info, session_status)
 
@@ -33,3 +33,6 @@ if not session_status.show_start_page:
     elif selected_model == 'YOLO_face_detecton':
         face_detector = FaceDetector()
         face_detector.run()
+
+    elif selected_model == 'Выбрать модель':
+        session_status.show_start_page = True
