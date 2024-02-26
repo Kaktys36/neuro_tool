@@ -7,7 +7,7 @@ def info_func(info, show_info, show_start_page):
         if info_btn:
             if show_info == False:
                 show_info = True
-            else:
+            elif show_info == True:
                 show_info = False
 
         if show_info:
