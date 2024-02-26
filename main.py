@@ -17,7 +17,7 @@ if session_status.show_start_page:
         собраны воедино несколько нейросетевых инструментов. \n
         Всё доступно каждому и абсолютно бесплатно (подробнее в информация о проекте>манифест).
         ''')
-    info_func(info, session_status)
+    #info_func(info, session_status)
 
     session_status.show_start_page = False
 
