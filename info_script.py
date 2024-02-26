@@ -3,7 +3,6 @@ import streamlit as st
 def info_func(info, show_info, show_start_page):    
     if show_start_page:
         info_toggle = st.checkbox('Показать/Скрыть информацию о проекте')
-        print(info_toggle)
 
         if info_toggle:
             show_info = True
