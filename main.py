@@ -32,7 +32,7 @@ elif selected_model == 'YOLO_face_detecton':
         st.rerun()
 
 infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления']
-selected_info = st.selectbox('Информация о проекте.', info)
+selected_info = st.selectbox('Информация о проекте.', infos)
 
 if selected_info == 'Манифест':
     st.write(info[0])
