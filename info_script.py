@@ -8,7 +8,6 @@ def click_button():
 def info_func(info, show_info, show_start_page):    
     if show_start_page:
         info_btn = st.button('Показать/Скрыть информацию о проекте', on_click=click_button)
-        st.slider('Select a value', disabled=st.session_state.button)
         print(info_btn)
 
         if info_btn:
