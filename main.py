@@ -16,6 +16,14 @@ if selected_model == 'GPT 3.5_turbo':
     chat_bot = ChatBot()
     chat_bot.run()
 
+    st.button("Вернуться к выбору модели")
+    if st.button:
+        st.experimental_rerun()
+
 elif selected_model == 'YOLO_face_detecton':
     face_detector = FaceDetector()
     face_detector.run()
+    
+    st.button("Вернуться к выбору модели")
+    if st.button:
+        st.experimental_rerun()
