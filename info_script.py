@@ -3,6 +3,7 @@ import streamlit as st
 def info_func(info, show_info, show_start_page):    
     if show_start_page:
         info_btn = st.button('Показать/Скрыть информацию о проекте')
+        st.write(info_btn)
 
         if info_btn:
             if show_info == False:
