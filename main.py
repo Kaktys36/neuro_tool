@@ -27,5 +27,8 @@ if show_start_page:
 
     else:
         show_start_page = True
+elif not show_start_page:
+    st.title('')
+    st.subheader('')
 
 #info_func(info, session_status)
