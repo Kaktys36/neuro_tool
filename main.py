@@ -29,8 +29,7 @@ st.session_state.show_start_page = False
 
 info_btn = st.button('Показать информацию о проекте')
 if info_btn:
-    st.session_state.show_info = True
-
+    st.session_state.show_info = not st.session_state.show_info
 
 
 if st.session_state.show_info:
