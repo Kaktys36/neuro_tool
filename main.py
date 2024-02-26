@@ -13,18 +13,18 @@ if st.session_state.show_start_page:
        'Это проект "Нейросетевого мультитула". Суть в том, что здесь \
         собраны воедино несколько нейросетевых инструментов. Всё доступно каждому и абсолютно бесплатно (подробнее в манифесте).')
 
-    models = ['GPT 3.5_turbo', 'YOLO_face_detecton']
-    selected_model = st.selectbox('Выберите модель: ', models)
+models = ['GPT 3.5_turbo', 'YOLO_face_detecton']
+selected_model = st.selectbox('Выберите модель: ', models)
 
-    if selected_model == 'GPT 3.5_turbo':
-        chat_bot = ChatBot()
-        chat_bot.run()
+if selected_model == 'GPT 3.5_turbo':
+    chat_bot = ChatBot()
+    chat_bot.run()
 
-    elif selected_model == 'YOLO_face_detecton':
-        face_detector = FaceDetector()
-        face_detector.run()
+elif selected_model == 'YOLO_face_detecton':
+    face_detector = FaceDetector()
+    face_detector.run()
 
-    st.session_state.show_start_page = False
+st.session_state.show_start_page = False
 
 else:
     infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность']
