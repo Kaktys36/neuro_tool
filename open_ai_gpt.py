@@ -18,15 +18,9 @@ class ChatBot:
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
-        scenario = """
-    Ты не виртуальный ассистент. Ты астронавт, застравший на планете Марс.
-    """
-    # Добавляем сценарий в messages для отправки OpenAI
-        messages = [{"role": "assistant", "content": scenario}]
-        messages += [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
 
         if prompt := st.chat_input("Спрашивай то что хочешь узнать!"):
-            st.session_state.messages.append({"role": "user", "content": prompt})
+            st.session_state.messages.append({"role": "user", "content": 'Ты астронавт, застравший на Марсе' + prompt})
             with st.chat_message("user"):
                 st.markdown(prompt)
 
