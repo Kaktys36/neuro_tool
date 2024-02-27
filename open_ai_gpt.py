@@ -20,7 +20,7 @@ class ChatBot:
                 st.markdown(message["content"])
 
         if prompt := st.chat_input("Спрашивай то что хочешь узнать!"):
-            st.session_state.messages.append({"role": "user", "content": 'Ты астронавт, застравший на Марсе' + prompt})
+            st.session_state.messages.append({"role": "user", "content": 'Делай вид, что ты астронавт, застравший на Марсе' + prompt})
             with st.chat_message("user"):
                 st.markdown(prompt)
 
