@@ -16,7 +16,8 @@ class ChatBot:
             st.session_state.messages = []
 
         if st.sidebar.checkbox("Добавить сценарий"):
-            scenario = st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога.")
+            if scenario := st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога."):
+                st.session_state.messages.append({"role": "assistant", "content": scenario})
         else:
             scenario = ''
 
@@ -43,4 +44,4 @@ class ChatBot:
                     full_response += (response.choices[0].delta.content or "")
                     message_placeholder.markdown(full_response + "▌")
                 message_placeholder.markdown(full_response)
-            st.session_state.messages.append({"role": "assistant", "content": scenario + full_response})
+            st.session_state.messages.append({"role": "assistant", "content": full_response})
