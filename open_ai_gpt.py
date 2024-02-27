@@ -16,7 +16,7 @@ class ChatBot:
             st.session_state.messages = []
 
         if st.sidebar.checkbox("Добавить сценарий"):
-            scenario = st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога.")
+            scenario = str(st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога."))
         else:
             scenario = ''
 
