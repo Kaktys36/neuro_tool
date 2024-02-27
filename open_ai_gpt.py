@@ -17,7 +17,7 @@ class ChatBot:
 
         if st.sidebar.checkbox("Добавить сценарий"):
             scenario_input = st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога.")
-            if scenario_input != st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога.")
+            if scenario_input != st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога."):
                 scenario = scenario_input
         else:
             scenario = ''
