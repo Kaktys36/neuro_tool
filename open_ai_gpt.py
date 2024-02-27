@@ -3,19 +3,19 @@ import streamlit as st
 from openai import OpenAI
 class ChatBot:
     def __init__(self):
-        self.client = OpenAI(api_key=st.secrets["API_KEY"])
+        self.client = OpenAI(api_key=st.secrets["API_KEY"]) # Подключение к профилю через API
 
-    def run(self):
+    def run(self): # Функция запуска модели для вызова из main
         st.title('ChatGPT 3.5 turbo')
         st.subheader('Я могу писать конспекты, решать математические задачи, написать с нуля эссе на любую тему и многое другое!')
-
+        
+        # Инициализация версии gpt 
         if "openai_model" not in st.session_state:
             st.session_state["openai_model"] = "gpt-3.5-turbo"
 
         if "messages" not in st.session_state:
             st.session_state.messages = []
 
-        bar_options = st.sidebar.empty
         if st.sidebar.checkbox("Добавить сценарий"):
             st.sidebar.text('Данная функция')
             if scenario := st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога."):
