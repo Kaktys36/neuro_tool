@@ -15,17 +15,15 @@ class ChatBot:
         if "messages" not in st.session_state:
             st.session_state.messages = []
 
-        st.markdown("""
-        <style>
-        div[data-baseweb="input"] {
-            margin-top: -300px;  # Меняйте значение, чтобы придать нужное смещение
-        }
-        </style>
-        """, unsafe_allow_html=True)
-
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
+        scenario = """
+    Ты должен каждый раз писать 111 в начале и конце сообщения
+    """
+    # Добавляем сценарий в messages для отправки OpenAI
+        messages = [{"role": "assistant", "content": scenario}]
+        messages += [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
 
         if prompt := st.chat_input("Спрашивай то что хочешь узнать!"):
             st.session_state.messages.append({"role": "user", "content": prompt})
