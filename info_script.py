@@ -1,29 +1,29 @@
 import streamlit as st
 
-def info_func(info, show_info, show_start_page):    
-    if show_start_page:
-        info_toggle = st.checkbox('Показать/Скрыть информацию о проекте')
+def info_func(info, show_info): # Функция для отображения информации о проекте по разделам
+    infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность'] # Определение переменной с названиями категорий информации
+    info_toggle = st.checkbox('Показать/Скрыть информацию о проекте') # Добавление в переменную info_toggle чекбокса
 
-        if info_toggle:
-            show_info = True
-        else:
-            show_info = False
+    if info_toggle: # Если чекбокс прожат, то 
+        show_info = True # Значение show_info принимает True и позже идёт обработка отображения информации
+    else:
+        show_info = False # Иначе False и информация отображаться не будет
 
-        if show_info:
-            infos = ['Манифест', 'Поддержать проект', 'Контакты', 'Последние обновления', 'Выражаю благодарность']
-            selected_info = st.selectbox('Информация о проекте.', infos, index=0)
+    if show_info: # И так, если чекбокс нажат, то show_info = True и
+        selected_info = st.selectbox('', infos, index=0) # В переменной selected_info находится выпадающий список (st.selectbox) без подписи, который принимает на вход список infos, названия категорий отображаются при нажатии на selectbox. index=0 отображает первый переданный элемент (Манифест)
 
-        if 'selected_info' in locals():  # Проверяем, определена ли переменная selected_info
-            if selected_info == 'Манифест':
-                st.text(info[0])
-            elif selected_info == 'Поддержать проект':
-                st.text(info[1])
-            elif selected_info == 'Контакты':
-                st.text(info[2])
-            elif selected_info == 'Последние обновления':
-                st.text(info[3])
-            elif selected_info == 'Выражаю благодарность':
-                st.text(info[4])
-        else:
-            pass
+    if 'selected_info' in locals():  # Проверяем, определена ли переменная selected_info. Нужно чтобы ускорить код, так как дальше много проверок. Переменная selected_info определена внутри функции, что позволяет установить проверку на её локальность
+        # Возможен переход на словарь для большей читаемости, но пока просто подпишу комментариями что есть что
+        if selected_info == 'Манифест': # Собственно дальше проверки того, что выбрано в selectbox. Если Манифест, то
+            st.text(info[0]) # С помощью st.text отображается текст из переменной manifest из списка info (под индексом 0)
+        elif selected_info == 'Поддержать проект':
+            st.text(info[1]) # Под индексом 1 информация о поддержке
+        elif selected_info == 'Контакты':
+            st.text(info[2]) # Контакты
+        elif selected_info == 'Последние обновления':
+            st.text(info[3]) # Последние обновления
+        elif selected_info == 'Выражаю благодарность':
+            st.text(info[4]) # Благодарности
+    else:
+        pass
 
