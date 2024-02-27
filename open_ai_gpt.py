@@ -15,6 +15,7 @@ class ChatBot:
         if "messages" not in st.session_state:
             st.session_state.messages = []
 
+        bar_options = st.sidebar.empty
         if st.sidebar.checkbox("Добавить сценарий"):
             if scenario := st.chat_input("Введите сюда роль, которую вы бы хотели чтобы отыгрывал бот или сценарий вашего диалога."):
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
