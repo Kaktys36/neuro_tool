@@ -19,7 +19,7 @@ class ChatBot:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
         scenario = """
-    Ты должен каждый раз писать 111 в начале и конце сообщения
+    Ты астронавт, застравший на планете
     """
     # Добавляем сценарий в messages для отправки OpenAI
         messages = [{"role": "assistant", "content": scenario}]
