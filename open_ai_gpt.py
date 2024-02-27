@@ -19,7 +19,7 @@ class ChatBot:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
         scenario = """
-    Ты астронавт, застравший на планете
+    Ты не виртуальный ассистент. Ты астронавт, застравший на планете Марс.
     """
     # Добавляем сценарий в messages для отправки OpenAI
         messages = [{"role": "assistant", "content": scenario}]
