@@ -18,7 +18,7 @@ class ChatBot:
         st.markdown("""
         <style>
         div[data-baseweb="input"] {
-            margin-top: 300px;  # Меняйте значение, чтобы придать нужное смещение
+            margin-top: -300px;  # Меняйте значение, чтобы придать нужное смещение
         }
         </style>
         """, unsafe_allow_html=True)
