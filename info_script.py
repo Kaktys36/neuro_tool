@@ -1,7 +1,6 @@
 import streamlit as st
 
-def info_func(info, show_info, show_start_page):    
-    #if show_start_page:
+def info_func(info, show_info):    
     info_toggle = st.checkbox('Показать/Скрыть информацию о проекте')
 
     if info_toggle:
@@ -14,7 +13,7 @@ def info_func(info, show_info, show_start_page):
         selected_info = st.selectbox('Информация о проекте.', infos, index=0)
 
     if 'selected_info' in locals():  # Проверяем, определена ли переменная selected_info
-        if selected_info == 'Манифест':
+        if selected_info == 'Манифест': # Возможен переход на словарь для большей читаемости, но пока просто подпишу комментариями что есть что
             st.text(info[0])
         elif selected_info == 'Поддержать проект':
             st.text(info[1])
