@@ -50,7 +50,7 @@ class ChatBot:
                             а вы будете говорить, 
                             как ему поступить дальше!
                             ''')
-            if scenario := st.chat_input(f'Пример: "{rand_scenario}"'):
+            if scenario := st.chat_input(f'{rand_scenario}'):
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
 
 
