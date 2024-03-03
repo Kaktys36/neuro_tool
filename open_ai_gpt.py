@@ -58,9 +58,8 @@ class ChatBot:
                             перезагрузить страницу.
                             ''')
             user_scenario = st.chat_input(str(rand_scenario))
-            if not user_scenario.isspace():
-                scenario = user_scenario
-                st.session_state.messages.append({'role': 'system', 'content': scenario})
+            scenario = user_scenario
+            st.session_state.messages.append({'role': 'system', 'content': scenario})
 
 
         for message in st.session_state.messages:
