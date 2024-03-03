@@ -8,6 +8,8 @@ class ChatBot:
     def run(self): # Функция запуска модели для вызова из main
         if "primer" not in st.session_state:
             st.session_state["primer"] = "You are a friendly and helpful assistant."
+        if "messages" not in st.session_state:
+            st.session_state["messages"] = []
 
         st.title('ChatGPT_3.5_turbo')
         st.subheader('''
