@@ -30,6 +30,7 @@ class ChatBot:
                              ]
         if st.sidebar.checkbox("Добавить сценарий"):
             rand_scenario = random.choice(scenario_examples)
+            scenario = ''
             st.sidebar.markdown('''
                             Данная функция позволяет 
                             персонализировать чат-бот 
