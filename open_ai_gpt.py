@@ -60,15 +60,18 @@ class ChatBot:
             
             #scenario = st.chat_input(rand_scenario)
                 #print('12312')
-            user_scenario = st.text_input(str(rand_scenario))
+            user_scenario = st.chat_input(str(rand_scenario))
             scenario = user_scenario
             st.session_state.messages.append({'role': 'system', 'content': scenario})
-        else:
-            pass
-
+            
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
+        
+        else:
+            pass
+
+        
 
         if prompt := st.chat_input('Поле для ввода запроса.'):
             st.session_state.messages.append({"role": "user", "content": prompt})
