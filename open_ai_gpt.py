@@ -59,7 +59,6 @@ class ChatBot:
                             ''')
             scenario = f'{st.text_input(rand_scenario)}'
             if scenario:
-                st.title(scenario)
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
 
 
