@@ -28,7 +28,7 @@ class ChatBot:
             'Запомни: мы говорили про насекомых, говори только про них. Своди все диалоги к ним.'
             'Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
-        while st.sidebar.checkbox("Добавить сценарий"):
+        if st.sidebar.button("Добавить сценарий"):
             rand_scenario = random.choice(scenario_examples)
             st.sidebar.markdown('''
                             Данная функция позволяет 
