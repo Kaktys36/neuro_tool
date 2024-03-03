@@ -6,6 +6,9 @@ class ChatBot:
         self.client = OpenAI(api_key=st.secrets["API_KEY"]) # Подключение к профилю через API
 
     def run(self): # Функция запуска модели для вызова из main
+        if "primer" not in st.session_state:
+            st.session_state["primer"] = "You are a friendly and helpful assistant."
+
         st.title('ChatGPT_3.5_turbo')
         st.subheader('''
                     Я могу писать конспекты, решать математические задачи, написать с нуля эссе на любую тему и многое другое!\n
@@ -58,12 +61,13 @@ class ChatBot:
                             перезагрузить страницу.
                             ''')
             
+            st.session_state.primer = st.chat_input(rand_scenario)
+
             #scenario = st.chat_input(rand_scenario)
                 #print('12312')
-            user_scenario = st.chat_input(str(rand_scenario))
-            scenario = user_scenario
-            st.session_state.messages.append({'role': 'system', 'content': scenario})
-            
+            #scenario = f'{st.chat_input(rand_scenario)}'
+            st.session_state.messages.append({'role': 'system', 'content': st.session_state.primer})
+
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
