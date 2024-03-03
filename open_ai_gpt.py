@@ -29,8 +29,8 @@ class ChatBot:
             'Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
         if st.sidebar.checkbox("Добавить сценарий"):
-            rand_scenario = random.choice(scenario_examples)
             scenario = ''
+            rand_scenario = random.choice(scenario_examples)
             st.sidebar.markdown('''
                             Данная функция позволяет 
                             персонализировать чат-бот 
@@ -62,6 +62,7 @@ class ChatBot:
                 print(scenario)
                 print(111)
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
+                scenario = ''
 
 
         for message in st.session_state.messages:
