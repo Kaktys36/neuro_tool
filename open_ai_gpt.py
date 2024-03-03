@@ -28,7 +28,7 @@ class ChatBot:
             'Запомни: мы говорили про насекомых, говори только про них. Своди все диалоги к ним.'
             'Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
-        if st.sidebar.button("Добавить сценарий"):
+        if st.sidebar.checkbox("Добавить сценарий"):
             rand_scenario = random.choice(scenario_examples)
             st.sidebar.markdown('''
                             Данная функция позволяет 
@@ -60,6 +60,8 @@ class ChatBot:
             scenario = f'{st.text_input(rand_scenario)}'
             if scenario:
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
+        else:
+            pass
 
 
         for message in st.session_state.messages:
