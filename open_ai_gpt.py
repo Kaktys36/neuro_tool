@@ -60,7 +60,7 @@ class ChatBot:
             
             #user_input = str(st.chat_input('test'))
            # print(user_input)
-            st.session_state.messages.append({'role': 'system', 'content': st.chat_input('test')})
+            st.session_state.messages.append({'role': 'system', 'content': str(st.chat_input('test'))})
             #user_scenario = st.chat_input(str(rand_scenario))
             #scenario = user_scenario
             #st.session_state.messages.append({'role': 'system', 'content': scenario})
