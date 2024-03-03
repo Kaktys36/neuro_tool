@@ -57,9 +57,10 @@ class ChatBot:
                             бот забыл роль, то нужно
                             перезагрузить страницу.
                             ''')
-            scenario = st.chat_input(f'{rand_scenario}')
-            print(scenario)
-            if scenario != rand_scenario:
+            scenario_chat = st.chat_input(f'{rand_scenario}')
+            print(scenario_chat)
+            if scenario_chat != rand_scenario:
+                    scenario = scenario_chat
             #if scenario := st.chat_input(f'{rand_scenario}'):
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
 
