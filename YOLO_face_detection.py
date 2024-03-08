@@ -14,17 +14,10 @@ class FaceDetector:
         st.title('YOLO8 настроенный на распознавание лиц')
         st.subheader('После того как вы загрузите фотографию я посчитаю сколько на ней лиц людей. Эту функцию можно использовать для подсчёта количества людей на фотографии.')
         uploaded_file = st.file_uploader('Выберите изображение (jpg, jpeg, png)', type=['jpg', 'jpeg', 'png'])
-        url = st.text_input("Введите ссылку на изображения")
 
-     
         if uploaded_file is not None:
             image = Image.open(uploaded_file)
             output = self.model(image)
             results = Detections.from_ultralytics(output[0])
             st.write(f'Модель обнаружила на фотографии {len(results)} лиц людей.')
 
-        elif url is not None:
-            image = Image.open(url)
-            output = self.model(image)
-            results = Detections.from_ultralytics(output[0])
-            st.write(f'Модель обнаружила на фотографии {len(results)} лиц людей.')
