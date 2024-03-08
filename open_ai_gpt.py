@@ -58,9 +58,6 @@ class ChatBot:
                             перезагрузить страницу.
                             ''')
             
-            title = st.text_input('Movie title', 'Life of Brian')
-            st.write('The current movie title is', title)
-            
             scenario = st.text_input(label=rand_scenario,value=)
             if scenario:
             #if scenario != 'Введите сценарий тут.':
@@ -90,3 +87,6 @@ class ChatBot:
                     message_placeholder.markdown(full_response + "▌")
                 message_placeholder.markdown(full_response)
             st.session_state.messages.append({"role": "assistant", "content": full_response})
+            
+            title = st.text_input('Movie title', 'Life of Brian')
+            st.write('The current movie title is', title)
