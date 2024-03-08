@@ -28,8 +28,8 @@ class ChatBot:
             'Пример. Запомни: мы говорили про насекомых, говори только про них. Своди все диалоги к ним.'
             'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
-        if st.sidebar.checkbox("Добавить сценарий"):
-            rand_scenario = random.choice(scenario_examples)
+        with st.sidebar.checkbox("Добавить сценарий"):
+            #rand_scenario = random.choice(scenario_examples)
             st.sidebar.markdown('''
                             Данная функция позволяет 
                             персонализировать чат-бот 
@@ -58,8 +58,9 @@ class ChatBot:
                             перезагрузить страницу.
                             ''')
             scenario = st.text_input(rand_scenario)
-            if scenario:
-                st.session_state.messages.append({'role': 'system', 'content': scenario})
+            st.text(scenario)
+            #if scenario:
+            #    st.session_state.messages.append({'role': 'system', 'content': scenario})
 
 
         for message in st.session_state.messages:
