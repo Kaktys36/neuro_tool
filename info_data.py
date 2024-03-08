@@ -93,5 +93,5 @@ info = {"Манифест": manifest,
         "Поддержать проект": requisites, 
         "Контакты": contacts, 
         "Последние обновления": update_info, 
-        "Благодарности": gratitude, 
+        "Выражаю благодарность": gratitude, 
         "Политика использования": term_of_use}
