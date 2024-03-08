@@ -29,7 +29,7 @@ class ChatBot:
             'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
         
-        if st.button('123'):
+        if st.checkbox('123'):
             scenario = st.text_input(label='123', value='Введите сценарий в это поле.')
             st.session_state.messages.append({'role': 'system', 'content': scenario})
             
