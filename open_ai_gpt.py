@@ -1,7 +1,7 @@
 import streamlit as st
 import random
-from openai import OpenAI
-class ChatBot:
+from openai import OpenAI # Загрузка библиотеки для работы с GPT
+class ChatBot: # Определение класса
     def __init__(self):
         self.client = OpenAI(api_key=st.secrets["API_KEY"]) # Подключение к профилю через API
 
@@ -57,7 +57,7 @@ class ChatBot:
                             бот забыл роль, то нужно
                             перезагрузить страницу.
                             ''')
-            scenario = st.text_input(rand_scenario)
+            scenario = st.text_input('123')
             st.text(scenario)
             #if scenario:
             #    st.session_state.messages.append({'role': 'system', 'content': scenario})
