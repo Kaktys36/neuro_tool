@@ -30,7 +30,7 @@ class ChatBot:
                              ]
         
         if st.button('123'):
-            scenario = st.text_input(label=rand_scenario, value='Введите сценарий в это поле.')
+            scenario = st.text_input(label='123', value='Введите сценарий в это поле.')
             st.session_state.messages.append({'role': 'system', 'content': scenario})
             
         if st.sidebar.checkbox("Добавить сценарий"):
