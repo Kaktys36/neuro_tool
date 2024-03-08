@@ -60,7 +60,7 @@ class FaceDetector:
                             st.warning(f"Error loading image from URL: {e}")
 
                             if __init__ == "__init__":
-                                self()
+                                run()
 
 
 
