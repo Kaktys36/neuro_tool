@@ -89,4 +89,4 @@ term_of_use = '''
               '''
 
 # Переменная, объединяющая остальные переменные с информацией в список, для удобства передачи в info_func
-info = [manifest, requisites, contacts, update_info, gratitude, term_of_use] 
+info = {"manifest": manifest, "requisites": requisites, "contacts": contacts, "update_info": update_info, "gratitude": gratitude, "term_of_use": term_of_use}
