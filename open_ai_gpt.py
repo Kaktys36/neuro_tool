@@ -59,9 +59,9 @@ class ChatBot:
                             перезагрузить страницу.
                             ''')
             
-            #scenario = st.text_input(label=rand_scenario, value='123')
-            #if scenario is not '123':
-            st.session_state.messages.append({'role': 'system', 'content': st.text_input(label=rand_scenario)})
+            scenario = st.text_input(label=rand_scenario, value='Введите сценарий в это поле.')
+            if scenario is not 'Введите сценарий в это поле.':
+                st.session_state.messages.append({'role': 'system', 'content': scenario})
 
                 
         
