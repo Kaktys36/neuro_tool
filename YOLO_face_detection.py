@@ -24,7 +24,7 @@ class FaceDetector:
             st.write(f'Модель обнаружила на фотографии {len(results)} лиц людей.')
 
         elif url:
-            image = image = Image.open(requests.get(url, stream=True).raw)
+            image = Image.open(requests.get(url, stream=True).raw)
             output = self.model(image)
             results = Detections.from_ultralytics(output[0])
             st.write(f'Модель обнаружила на фотографии {len(results)} лиц людей.')
