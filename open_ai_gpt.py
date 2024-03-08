@@ -29,6 +29,10 @@ class ChatBot:
             'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
         
+        if st.button('123'):
+            scenario = st.text_input(label=rand_scenario, value='Введите сценарий в это поле.')
+            st.session_state.messages.append({'role': 'system', 'content': scenario})
+            
         if st.sidebar.checkbox("Добавить сценарий"):
             rand_scenario = random.choice(scenario_examples)
             st.sidebar.markdown('''
@@ -59,10 +63,9 @@ class ChatBot:
                             перезагрузить страницу.
                             ''')
             
-            if st.button('123'):
-                scenario = st.text_input(label=rand_scenario, value='Введите сценарий в это поле.')
-                if scenario is not 'Введите сценарий в это поле.':
-                    st.session_state.messages.append({'role': 'system', 'content': scenario})
+            scenario = st.text_input(label=rand_scenario, value='Введите сценарий в это поле.')
+            if scenario is not 'Введите сценарий в это поле.':
+                st.session_state.messages.append({'role': 'system', 'content': scenario})
 
                 
         
