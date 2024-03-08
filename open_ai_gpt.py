@@ -61,7 +61,7 @@ class ChatBot:
             st.text(scenario)
             if scenario:
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
-
+        st.text(scenario)
         st.session_state.messages.append({'role': 'system', 'content': 'dfsgjkldfghdfl'})
         
         for message in st.session_state.messages:
