@@ -29,7 +29,7 @@ class ChatBot:
             'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
         
-        if st.checkbox('Информация о сценарии'):
+        if st.sidebar.checkbox('Информация о сценарии'):
             st.markdown('''
                         Перед нажатием кнопки "Сохранить"
                         необходимо подождать несколько секунд,
@@ -61,12 +61,11 @@ class ChatBot:
                         перезагрузить страницу!!!.
                         ''')
                 
-        rand_scenario = random.choice(scenario_examples)
-        self.scenario = st.text_area(label=rand_scenario, value='Введите сценарий в это поле.')
-        if st.button("Сохранить"):
-            st.title(self.scenario)
-            #if self.scenario != 'Введите сценарий в это поле.':
-                #st.session_state.messages.append({'role': 'system', 'content': self.scenario})
+            rand_scenario = random.choice(scenario_examples)
+            self.scenario = st.text_area(label=rand_scenario, value='Введите сценарий в это поле.')
+            if st.button("Сохранить"):
+                if self.scenario != 'Введите сценарий в это поле.':
+                    st.session_state.messages.append({'role': 'system', 'content': self.scenario})
         
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
