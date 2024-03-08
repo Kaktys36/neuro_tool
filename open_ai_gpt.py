@@ -29,8 +29,7 @@ class ChatBot:
             'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
         
-        scenario_flag = st.sidebar.checkbox("Добавить сценарий")
-        while scenario_flag == True:
+        if st.sidebar.checkbox("Добавить сценарий") == True:
             rand_scenario = random.choice(scenario_examples)
             st.sidebar.markdown('''
                             Данная функция позволяет 
