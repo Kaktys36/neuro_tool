@@ -58,7 +58,10 @@ class ChatBot:
                             перезагрузить страницу.
                             ''')
             
-            scenario = st.text_input(label=rand_scenario)
+            title = st.text_input('Movie title', 'Life of Brian')
+            st.write('The current movie title is', title)
+            
+            scenario = st.text_input(label=rand_scenario,value=)
             if scenario:
             #if scenario != 'Введите сценарий тут.':
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
