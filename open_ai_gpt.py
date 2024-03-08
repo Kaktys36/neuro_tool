@@ -61,7 +61,7 @@ class ChatBot:
             
             #scenario = st.text_input(label=rand_scenario, value='123')
             #if scenario is not '123':
-            st.session_state.messages.append({'role': 'system', 'content': st.text_input(label=rand_scenario, value='123')})
+            st.session_state.messages.append({'role': 'system', 'content': st.text_input(label=rand_scenario)})
 
                 
         
