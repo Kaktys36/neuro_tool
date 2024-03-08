@@ -60,7 +60,7 @@ class ChatBot:
                             ''')
                 
             rand_scenario = random.choice(scenario_examples)
-            self.scenario = st.text_input(label=rand_scenario, value='Введите сценарий в это поле.')
+            self.scenario = st.text_area(label=rand_scenario, value='Введите сценарий в это поле.')
             st.info(self.scenario)
             if st.button("Сохранить"):
                 if self.scenario is not 'Введите сценарий в это поле.':
