@@ -62,8 +62,7 @@ class ChatBot:
             if scenario:
             #if scenario != 'Введите сценарий тут.':
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
-            elif scenario == '123':
-                st.text('2344')
+
                 
         
         for message in st.session_state.messages:
