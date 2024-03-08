@@ -1,7 +1,7 @@
 import streamlit as st
 import random
-from openai import OpenAI # Загрузка библиотеки для работы с GPT
-class ChatBot: # Определение класса
+from openai import OpenAI # Загрузка библиотеки для работы c GPT
+class ChatBot:
     def __init__(self):
         self.client = OpenAI(api_key=st.secrets["API_KEY"]) # Подключение к профилю через API
 
@@ -29,7 +29,7 @@ class ChatBot: # Определение класса
             'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
         with st.sidebar.checkbox("Добавить сценарий"):
-            #rand_scenario = random.choice(scenario_examples)
+            rand_scenario = random.choice(scenario_examples)
             st.sidebar.markdown('''
                             Данная функция позволяет 
                             персонализировать чат-бот 
@@ -57,10 +57,10 @@ class ChatBot: # Определение класса
                             бот забыл роль, то нужно
                             перезагрузить страницу.
                             ''')
-            scenario = st.text_input('123')
+            scenario = st.text_input(rand_scenario)
             st.text(scenario)
-            #if scenario:
-            #    st.session_state.messages.append({'role': 'system', 'content': scenario})
+            if scenario:
+                st.session_state.messages.append({'role': 'system', 'content': scenario})
 
 
         for message in st.session_state.messages:
