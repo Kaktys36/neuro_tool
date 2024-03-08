@@ -59,9 +59,9 @@ class ChatBot:
                             ''')
             
             scenario = st.text_input(label=rand_scenario, value='Введите сценарий тут.')
-            #user_scenario = scenario
+            user_scenario = scenario
             if user_scenario != 'Введите сценарий тут.':
-                st.session_state.messages.append({'role': 'system', 'content': scenario})
+                st.session_state.messages.append({'role': 'system', 'content': user_scenario})
         
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
