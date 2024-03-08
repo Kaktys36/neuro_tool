@@ -23,7 +23,7 @@ class FaceDetector:
             results = Detections.from_ultralytics(output[0])
             st.write(f'Модель обнаружила на фотографии {len(results)} лиц людей.')
 
-           elif url is not None:
+        elif url is not None:
             image = Image.open(url)
             output = self.model(image)
             results = Detections.from_ultralytics(output[0])
