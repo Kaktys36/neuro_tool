@@ -20,3 +20,4 @@ class FaceDetector:
             output = self.model(image)
             results = Detections.from_ultralytics(output[0])
             st.write(f'Модель обнаружила на фотографии {len(results)} лиц людей.')
+
