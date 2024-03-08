@@ -29,13 +29,9 @@ class ChatBot:
             'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
                              ]
         
-        if st.checkbox('123'):
-            scenario = st.text_input(label='123', value='Введите сценарий в это поле.')
-            st.session_state.messages.append({'role': 'system', 'content': scenario})
-            
-        if st.sidebar.checkbox("Добавить сценарий"):
-            rand_scenario = random.choice(scenario_examples)
-            st.sidebar.markdown('''
+        if st.checkbox('Добавить сценарий'):
+            if st.button('Информация о сценарии'):
+                st.markdown('''
                             Данная функция позволяет 
                             персонализировать чат-бот 
                             под вас.
@@ -62,12 +58,10 @@ class ChatBot:
                             бот забыл роль, то нужно
                             перезагрузить страницу.
                             ''')
-            
+            rand_scenario = random.choice(scenario_examples)
             scenario = st.text_input(label=rand_scenario, value='Введите сценарий в это поле.')
             if scenario is not 'Введите сценарий в это поле.':
                 st.session_state.messages.append({'role': 'system', 'content': scenario})
-
-                
         
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
