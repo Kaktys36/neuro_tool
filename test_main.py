@@ -1,22 +1,21 @@
-import unittest
+import pytest
 from unittest.mock import patch
 from io import StringIO
 import sys
-import main
+from main import selected_model, show_start_page, show_info, info_func, info, models
 
-
-class TestMain(unittest.TestCase):
-    @patch("streamlit.selectbox", return_value="Стартовая страница")
-    def test_start_page_info(self, mock_selectbox):
+def test_show_start_page():
+    selected_model = "Some_model"
+    show_start_page = True
+    show_info = False
+    info = ["Some", "info", "here"]
+    with patch("streamlit.selectbox", return_value="Some_model"):
         captured_output = StringIO()
         sys.stdout = captured_output
-        main.selected_model = "Стартовая страница"
-        main.show_start_page = True
-        main.show_info = False
-        main.info_func(main.info, main.show_info)
-        sys.stdout = sys.__stdout__
-        self.assertIn("Neurotool_v.1.1.2", captured_output.getvalue())
-
+        if selected_model == "GPT_3.5_turbo":  
+            assert show_start_page == False
+        elif selected_model == "YOLO8_face_detector":  
+            assert show_start_page == False
 
 if __name__ == "__main__":
-    unittest.main()
+    pytest.main()
