@@ -1,3 +1,4 @@
+#Импорт необходимых библиотек
 import streamlit as st
 import requests
 
