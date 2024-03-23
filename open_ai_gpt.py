@@ -26,19 +26,18 @@ class ChatBot:
             st.session_state.messages = []
 
         scenario_examples = [
-            "Пример. Запомни: отыгрывай роль пирата. Ты сражаешься с кораблём-призраком. Ты будешь говорить что ты можешь сделать, а пользователь будет тебе помогать, чтобы ты вышел победителем",
-            "Пример. Запомни: представь, что ты астронавт, который потерпел крушение на Марсе. Ты будешь предлагать варианты дальнейших действий, а пользователь направлять тебя",
-            "Пример. Запомни: до этого мы говорили о детских мечтах. Представь, что ты сказал, что мечтал в детстве стать киборгом.Пользователю интересно почему ты об этом мечтал",
-            "Пример. Запомни: проконсультируй меня как профессиональный садовод. Я хочу вырастить несколько растений мне нужны подробные инструкции.",
-            "Пример. Запомни: выполни роль киберспортивного тренера. Я хочу знать всё о том, как поднять свой MMR.",
-            "Пример. Запомни: мы говорили про насекомых, говори только про них. Своди все диалоги к ним."
-            "Пример. Запомни: говори только о котиках, своди все разговоры к ним.",
+            'Пример. Запомни: отыгрывай роль пирата. Ты сражаешься с кораблём-призраком. Ты будешь говорить что ты можешь сделать, а пользователь будет тебе помогать, чтобы ты вышел победителем', 
+            'Пример. Запомни: представь, что ты астронавт, который потерпел крушение на Марсе. Ты будешь предлагать варианты дальнейших действий, а пользователь направлять тебя',
+            'Пример. Запомни: до этого мы говорили о детских мечтах. Представь, что ты сказал, что мечтал в детстве стать киборгом.Пользователю интересно почему ты об этом мечтал',
+            'Пример. Запомни: проконсультируй меня как профессиональный садовод. Я хочу вырастить несколько растений мне нужны подробные инструкции.',
+            'Пример. Запомни: выполни роль киберспортивного тренера. Я хочу знать всё о том, как поднять свой MMR.',
+            'Пример. Запомни: мы говорили про насекомых, говори только про них. Своди все диалоги к ним.',
+            'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
         ]
 
-        if st.sidebar.checkbox("Информация о сценарии"):
-            if st.button("Информация о проекте"):
-                st.markdown(
-                    """
+        if st.sidebar.checkbox('Информация о сценарии'):
+            if st.button('Информация о функции сценария'):
+                st.markdown('''
                         Перед нажатием кнопки "Сохранить"
                         необходимо подождать несколько секунд,
                         чтобы сценарий сохранился в памяти сервера.
@@ -67,42 +66,38 @@ class ChatBot:
                         Если что-то пошло не так, или
                         бот забыл роль, то нужно
                         перезагрузить страницу!!!.
-                        """
+                        '''
                 )
 
             rand_scenario = random.choice(scenario_examples)
             self.scenario = st.text_area(
-                label=rand_scenario, value="Введите сценарий в это поле."
+                label=rand_scenario, value='Введите сценарий в это поле.'
             )
-            if st.button("Сохранить"):
-                if self.scenario != "Введите сценарий в это поле.":
-                    st.session_state.messages.append(
-                        {"role": "system", "content": self.scenario}
-                    )
+            if st.button('Сохранить'):
+                if self.scenario != 'Введите сценарий в это поле.':
+                    st.session_state.messages.append({'role': 'system', 'content': self.scenario})
 
         for message in st.session_state.messages:
-            with st.chat_message(message["role"]):
-                st.markdown(message["content"])
+            with st.chat_message(message['role']):
+                st.markdown(message['content'])
 
-        if prompt := st.chat_input("Поле для ввода запроса."):
-            st.session_state.messages.append({"role": "user", "content": prompt})
-            with st.chat_message("user"):
+        if prompt := st.chat_input('Поле для ввода запроса.'):
+            st.session_state.messages.append({'role': 'user', 'content': prompt})
+            with st.chat_message('user'):
                 st.markdown(prompt)
 
-            with st.chat_message("assistant"):
+            with st.chat_message('assistant'):
                 message_placeholder = st.empty()
-                full_response = ""
+                full_response = ''
                 for response in self.client.chat.completions.create(
-                    model=st.session_state["openai_model"],
-                    messages=[
-                        {"role": m["role"], "content": m["content"]}
-                        for m in st.session_state.messages
-                    ],
-                    stream=True,
+                        model=st.session_state['openai_model'],
+                        messages=[
+                            {'role': m['role'], 'content': m['content']}
+                            for m in st.session_state.messages
+                        ],
+                        stream=True,
                 ):
-                    full_response += response.choices[0].delta.content or ""
-                    message_placeholder.markdown(full_response + "▌")
+                    full_response += (response.choices[0].delta.content or '')
+                    message_placeholder.markdown(full_response + '▌')
                 message_placeholder.markdown(full_response)
-            st.session_state.messages.append(
-                {"role": "assistant", "content": full_response}
-            )
+            st.session_state.messages.append({'role': 'assistant', 'content': full_response})
