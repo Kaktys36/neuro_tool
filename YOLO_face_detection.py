@@ -1,4 +1,4 @@
-#Импорт необходимых библиотек
+# Импорт необходимых библиотек
 import streamlit as st
 import requests
 
@@ -18,13 +18,13 @@ class FaceDetector:
         uploaded_file = st.file_uploader('Выберите изображение (jpg, jpeg, png)', type=['jpg', 'jpeg', 'png'])
         url = st.text_input("Вставьте ссылку на изображение")
 
-        #Загрузка картинок
+        # Загрузка картинок
         if uploaded_file is not None:
             image = Image.open(uploaded_file)
             output = self.model(image)
             results = Detections.from_ultralytics(output[0])
             st.write(f'Модель обнаружила на фотографии {len(results)} лиц людей.')
-        #Загрузка картинок по url
+        # Загрузка картинок по url
         elif url:
             image = Image.open(requests.get(url, stream=True).raw)
             output = self.model(image)
