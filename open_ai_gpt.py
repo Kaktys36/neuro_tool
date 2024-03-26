@@ -75,8 +75,8 @@ class ChatBot:
                 st.session_state.messages.append({'role': 'system', 'content': text})
 
     # Отображение текста
-    st.write("Содержимое файла:")
-    st.write(text.decode("utf-8")) 
+    #st.write("Содержимое файла:")
+    #st.write(text.decode("utf-8")) 
             #rand_scenario = random.choice(scenario_examples)
             #self.scenario = st.chat_input(rand_scenario)
             #if self.scenario is not None:
