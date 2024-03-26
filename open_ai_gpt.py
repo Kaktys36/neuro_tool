@@ -75,8 +75,8 @@ class ChatBot:
             )
             print(self.scenario)
             #if st.button('Сохранить'):
-            if self.scenario != 'Введите сценарий в это поле.':
-                st.session_state.messages.append({'role': 'system', 'content': self.scenario})
+            #if self.scenario != 'Введите сценарий в это поле.':
+            st.session_state.messages.append({'role': 'system', 'content': self.scenario})
 
         for message in st.session_state.messages:
             with st.chat_message(message['role']):
