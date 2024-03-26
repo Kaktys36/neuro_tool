@@ -35,7 +35,7 @@ class ChatBot:
             'Пример. Запомни: говори только о котиках, своди все разговоры к ним.'
         ]
 
-        if st.sidebar.checkbox('Добавить сценарий'):
+        if st.sidebar.toggle('Добавить сценарий'):
             if st.button('Информация о функции сценария'):
                 st.markdown('''
                         Перед нажатием кнопки "Сохранить"
@@ -73,7 +73,7 @@ class ChatBot:
             self.scenario = st.text_area(
                 label=rand_scenario, value='Введите сценарий в это поле.'
             )
-            if st.button('Сохранить'):
+            if st.toggle('Сохранить'):
                 if self.scenario != 'Введите сценарий в это поле.':
                     st.session_state.messages.append({'role': 'system', 'content': self.scenario})
 
