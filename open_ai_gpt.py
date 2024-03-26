@@ -26,10 +26,12 @@ class ChatBot:
 
         if st.sidebar.toggle('Зафиксировать ответы на определённом языке'):
             if st.sidebar.button('English'): 
-                st.session_state.messages.append({'role': 'system', 'content': 'I write and answer only in English!'})
+                st.session_state.messages.append({'role': 'system', 'content': 'Now I write and answer only in English!'})
             if st.sidebar.button('Русский'):
-                st.session_state.messages.append({'role': 'system', 'content': 'Я пишу и отвечаю только на русском языке!'})
-                    
+                st.session_state.messages.append({'role': 'system', 'content': 'Теперь я пишу и отвечаю только на русском языке!'})
+        else:        
+            st.session_state.messages.append({'role': 'system', 'content': 'Теперь я пишу и отвечаю на любом языке!'})
+            
         if st.sidebar.toggle('Добавить сценарий'):
             if st.button('Информация о сценарии'):
                 st.markdown('''
