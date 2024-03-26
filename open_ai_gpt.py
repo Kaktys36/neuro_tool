@@ -73,7 +73,9 @@ class ChatBot:
             if uploaded_file is not None:
                 text = uploaded_file.read()
                 decoded_text = text.decode("utf-8")
-                st.session_state.messages.append({'role': 'system', 'content': decoded_text})
+                scenario_button = st.button('Отправить сценарий')
+                if scenario_button:
+                    st.session_state.messages.append({'role': 'system', 'content': decoded_text})
 
     # Отображение текста
     #st.write("Содержимое файла:")
