@@ -70,7 +70,7 @@ class ChatBot:
                 )
 
             rand_scenario = random.choice(scenario_examples)
-            self.scenario = st.chat_input(rand_scenario)
+            self.scenario = st.chat_input(rand_scenario, height=300)
             if self.scenario is not None:
                 st.session_state.messages.append({'role': 'system', 'content': self.scenario})
 
