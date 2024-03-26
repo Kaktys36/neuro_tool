@@ -72,7 +72,8 @@ class ChatBot:
             uploaded_file = st.file_uploader("Выберите файл", type=["txt"])
             if uploaded_file is not None:
                 text = uploaded_file.read()
-                st.session_state.messages.append({'role': 'system', 'content': text.decode("utf-8")})
+                decoded_text = text.decode("utf-8")
+                st.session_state.messages.append({'role': 'system', 'content': decoded_text})
 
     # Отображение текста
     #st.write("Содержимое файла:")
