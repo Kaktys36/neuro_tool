@@ -25,10 +25,9 @@ class ChatBot:
             st.session_state.messages = []
 
         if st.sidebar.toggle('Зафиксировать ответы на определённом языке'):
-            language_mode = st.sidebar.selectbox('Выберите язык', ['English', 'Русский'])
-            if language_mode == 'English':
+            if st.button('English'): 
                 st.session_state.messages.append({'role': 'system', 'content': 'I write and answer only in English!'})
-            else:
+            if st.button('Русский'):
                 st.session_state.messages.append({'role': 'system', 'content': 'Я пишу и отвечаю только на русском языке!'})
                     
         if st.sidebar.toggle('Добавить сценарий'):
