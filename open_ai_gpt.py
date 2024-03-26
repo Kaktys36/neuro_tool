@@ -24,10 +24,10 @@ class ChatBot:
         if "messages" not in st.session_state:
             st.session_state.messages = []
 
+        if st.sidebar.checkbox('Включить ответы только на английском.'):
+            st.session_state.messages.append({'role': 'system', 'content': 'I write and answer only in English'})
+            
         if st.sidebar.toggle('Добавить сценарий'):
-            language_mode = st.checkbox('Включить ответы только на английском.')
-            if language_mode:
-                st.session_state.messages.append({'role': 'system', 'content': 'I write and answer only in English'})
             if st.button('Информация о сценарии'):
                 st.markdown('''
                        Функция работает в тестовом формате и доступна только через загрузку текстового файла.
