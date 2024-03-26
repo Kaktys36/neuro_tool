@@ -73,7 +73,7 @@ class ChatBot:
             self.scenario = st.text_area(
                 label=rand_scenario, value='Введите сценарий в это поле.'
             )
-            if st.toggle('Сохранить'):
+            if st.button('Сохранить'):
                 if self.scenario != 'Введите сценарий в это поле.':
                     st.session_state.messages.append({'role': 'system', 'content': self.scenario})
 
