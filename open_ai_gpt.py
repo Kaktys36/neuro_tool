@@ -71,7 +71,7 @@ class ChatBot:
 
             rand_scenario = random.choice(scenario_examples)
             self.scenario = st.chat_input('Поле для ввода сценария.')
-            if self.scenario != None:
+            if self.scenario is not None:
                 st.session_state.messages.append({'role': 'system', 'content': self.scenario})
             #self.scenario = st.text_area(
             #    label=rand_scenario, value='Введите сценарий в это поле.'
