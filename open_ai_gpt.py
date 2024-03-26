@@ -70,9 +70,9 @@ class ChatBot:
                 )
 
             uploaded_file = st.file_uploader("Выберите файл", type=["txt"])
-                if uploaded_file is not None:
-                    text = uploaded_file.read()
-                    st.session_state.messages.append({'role': 'system', 'content': text})
+            if uploaded_file is not None:
+                text = uploaded_file.read()
+                st.session_state.messages.append({'role': 'system', 'content': text})
 
     # Отображение текста
     st.write("Содержимое файла:")
