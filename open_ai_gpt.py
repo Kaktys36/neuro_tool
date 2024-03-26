@@ -69,10 +69,18 @@ class ChatBot:
                         '''
                 )
 
-            rand_scenario = random.choice(scenario_examples)
-            self.scenario = st.chat_input(rand_scenario)
-            if self.scenario is not None:
-                st.session_state.messages.append({'role': 'system', 'content': self.scenario})
+            uploaded_file = st.file_uploader("Выберите файл", type=["txt"])
+                if uploaded_file is not None:
+                    text = uploaded_file.read()
+                    st.session_state.messages.append({'role': 'system', 'content': text})
+
+    # Отображение текста
+    st.write("Содержимое файла:")
+    st.write(text.decode("utf-8")) 
+            #rand_scenario = random.choice(scenario_examples)
+            #self.scenario = st.chat_input(rand_scenario)
+            #if self.scenario is not None:
+                #st.session_state.messages.append({'role': 'system', 'content': self.scenario})
 
         for message in st.session_state.messages:
             with st.chat_message(message['role']):
