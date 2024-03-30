@@ -40,6 +40,8 @@ streamlit run main.py
 
 4) Откройте приложение в браузере по адресу http://localhost:8501
 
+5) Ссылка на стримлит https://neurotool.streamlit.app/
+
 ## Структура репозитория
 
 ```main.py``` - главный скрипт Streamlit приложения  
