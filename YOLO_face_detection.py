@@ -1,4 +1,4 @@
-#Импорт необходимых библиотек
+# Импорт необходимых библиотек
 import streamlit as st
 import requests
 
@@ -8,7 +8,7 @@ from supervision import Detections
 from PIL import Image
 class FaceDetector:
     def __init__(self):
-        # download model
+        # Загрузка модели
         model_path = hf_hub_download(repo_id='arnabdhar/YOLOv8-Face-Detection', filename='model.pt')
         self.model = YOLO(model_path)
 
