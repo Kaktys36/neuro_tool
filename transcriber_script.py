@@ -10,6 +10,7 @@ class Transcriber:
         #self.whisper_model = 'base'
         
     def run(self):
+        @st.cache_resource(show_spinner=False)
         st.title("Whisper")
         st.subheader(
             """
@@ -20,7 +21,7 @@ class Transcriber:
 
         whisper_model = st.sidebar.selectbox("Whisper model", options=[
             "tiny", "base", "small", "medium", "large", "large-v2", "large-v3"], index=4)
-        @st.cache_resource(show_spinner=False)
+        
     def load_whisper_model(whisper_model: str) -> whisper.Whisper:
         try:
             global model
