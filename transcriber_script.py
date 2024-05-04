@@ -8,8 +8,9 @@ class Transcriber:
     def __init__(self):
         self.test = 'asdas',
         self.whisper_model = "base"
+        @st.cache_resource(show_spinner=False)
         
-    def load_whisper_model(self, modelName: str): #-> whisper.Whisper:
+    def load_whisper_model(self, modelName: str) -> whisper.Whisper:
         try:
             global model
             model = whisper.load_model(modelName)
