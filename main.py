@@ -11,6 +11,7 @@ models = [
     "Стартовая страница",
     "GPT_3.5_turbo",
     "YOLO8_face_detector",
+    "Whisper"
 ]  # Список, который передаётся в selectbox (выпадающий список) для обработки того, какую модель запустить
 selected_model = st.selectbox(
     "Выберите модель: ", models)  # Запись в переменную selected_model выбранной модели из st.selectbox
@@ -21,13 +22,16 @@ if selected_model == "GPT_3.5_turbo":  # Если выбран GPT_3.5_turbo
     chat_bot.run()  # Запуск бота
     show_start_page = False  # Переопределение переменной show_start_page для остановки показа информации со стартовой страницы
 
-elif (
-    selected_model == "YOLO8_face_detector"
-):  # Тоже самое, только для класса FaceDetector c YOLO8
+elif selected_model == "YOLO8_face_detector":  # Тоже самое, только для класса FaceDetector c YOLO8
     face_detector = FaceDetector()
     face_detector.run()
     show_start_page = False
-
+    
+elif selected_model == "Whisper":  # Тоже самое, только для класса FaceDetector c YOLO8
+    transcriber = Transcriber()
+    Transcriber.run()
+    show_start_page = False
+    
 else:
     show_start_page = True  # Иначе стартовая показ информации со стартовой страницы сохраняется
 
