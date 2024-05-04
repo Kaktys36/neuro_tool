@@ -16,15 +16,15 @@ class Transcriber:
                     Я могу писать транскрибировать аудио и видеофайлы (получать текст).
                      """
         )
-        input_file = st.sidebar.file_uploader("Files", type=["mp4", "m4a", "mp3", "wav"])
+        self.input_file = st.sidebar.file_uploader("Files", type=["mp4", "m4a", "mp3", "wav"])
 
-        whisper_model = st.sidebar.selectbox("Whisper model", options=[
+        self.whisper_model = st.sidebar.selectbox("Whisper model", options=[
             "tiny", "base", "small", "medium", "large", "large-v2", "large-v3"], index=4)
         
     def load_whisper_model(whisper_model: str) -> whisper.Whisper:
         try:
             global model
-            model = whisper.load_model(whisper_model)
+            model = whisper.load_model(self.whisper_model)
             print("Model Loaded")
             print("-------------------------")
             return model
