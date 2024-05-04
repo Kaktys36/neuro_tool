@@ -2,9 +2,10 @@ import whisper
 import streamlit as st
 
 class Transcriber:
-    def __init__(self, whisper_model: str, translation: bool):
-        self.translation = False
-        self.whisper_model = 'base'
+    def __init__(self, test):
+        self.test = 'asdas'#, whisper_model: str, translation: bool):
+        #self.translation = False
+        #self.whisper_model = 'base'
         
     def run():
         st.title("Whisper")
