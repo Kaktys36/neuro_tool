@@ -5,3 +5,4 @@ Pillow
 supervision
 ultralytics
 whisper
+torch
