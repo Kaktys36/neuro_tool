@@ -20,9 +20,8 @@ class Transcriber:
 
         self.whisper_model = st.sidebar.selectbox("Whisper model", options=[
             "tiny", "base", "small", "medium", "large", "large-v2", "large-v3"], index=4)
+        self.model = whisper.load_model(self.whisper_model)
+        self.result = self.model.transcribe(
+                    audio=self.input_file)
         
-        model = whisper.load_model(self.whisper_model)
-        print("Model Loaded")
-        print("-------------------------")
-        return model
-        
+   
