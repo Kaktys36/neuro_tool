@@ -9,12 +9,10 @@ class Transcriber:
         self.whisper_model = "base"
        # @st.cache_resource(show_spinner=False)
         
-    def load_whisper_model(self, modelName: str) -> whisper.Whisper:
-        model: whisper.Whisper = None
-        modelName: str = "base.en"
+    def load_whisper_model(self, whisper_model: str):
         try:
             global model
-            model = whisper.load_model(modelName)
+            model = whisper.load_model(whisper_model)
             print("Model Loaded")
             print("-------------------------")
             return model
