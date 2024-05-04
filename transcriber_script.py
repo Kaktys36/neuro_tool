@@ -7,7 +7,7 @@ class Transcriber:
         self.test = 'asdas',
         self.whisper_model = "base"
         
-    def load_whisper_model(modelName: str):# -> whisper.Whisper:
+    def load_whisper_model(self, modelName: str): #-> whisper.Whisper:
         try:
             global model
             model = whisper.load_model(modelName)
@@ -28,7 +28,7 @@ class Transcriber:
 
         self.whisper_model = st.sidebar.selectbox("Whisper model", options=[
             "tiny", "base", "small", "medium", "large", "large-v2", "large-v3"], index=4)
-        self.model = load_whisper_model(whisper_model)
+        self.model = self.load_whisper_model(whisper_model)
     
         
    
