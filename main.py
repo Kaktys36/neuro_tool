@@ -4,7 +4,9 @@ from YOLO_face_detection import FaceDetector # Импорт класса FaceDet
 from info_script import info_func  # Импорт функии info_func для отображения информации о проекте. На вход необходима информация
 from info_data import info  # Импорт переменной info из info_data (список)
 from transcriber_script import Transcriber
-
+with open('style.css') as f:
+    st.markdown('<style>{}</style>'.format(f.read()),
+                unsafe_allow_html=True)
 show_start_page = True  # Булевая переменная для определения необходимости отображения информации только стартовой страницы (информация о проекте и заголовок)
 show_info = False  # Булевая переменная для определения необходимости отображения подробной информации о проекте. Она используется в info_func и нужна чтобы изначально более подробная информация не отображалась, но при необходимости  её можно было отобразить, кликнув на checkbox
 
