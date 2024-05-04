@@ -2,8 +2,7 @@ import whisper
 import streamlit as st
 #import torch
 
-model: whisper.Whisper = None
-modelName: str = "base.en"
+
 class Transcriber:
     def __init__(self):
         self.test = 'asdas',
@@ -11,6 +10,8 @@ class Transcriber:
        # @st.cache_resource(show_spinner=False)
         
     def load_whisper_model(self, modelName: str) -> whisper.Whisper:
+        model: whisper.Whisper = None
+        modelName: str = "base.en"
         try:
             global model
             model = whisper.load_model(modelName)
