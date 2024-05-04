@@ -16,7 +16,7 @@ class Transcriber:
             print("Model Loaded")
             print("-------------------------")
             return model
-        except Exception as e:x
+        except Exception as e:
             st.error(f"Failed to load Whisper model: {e}", icon="❌")
         
     def run(self):
