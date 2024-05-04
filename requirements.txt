@@ -6,4 +6,3 @@ supervision
 ultralytics
 whisper
 torch
-cuda
