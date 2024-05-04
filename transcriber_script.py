@@ -2,12 +2,12 @@ import whisper
 import streamlit as st
 
 class Transcriber:
-    def __init__(self, test):
+    def __init__(self):
         self.test = 'asdas'#, whisper_model: str, translation: bool):
         #self.translation = False
         #self.whisper_model = 'base'
         
-    def run():
+    def run(self):
         st.title("Whisper")
         #if st.sidebar.form("input_form"):
          #   input_files = st.file_uploader("Files", type=["mp4", "m4a", "mp3", "wav"], accept_multiple_files=True)
