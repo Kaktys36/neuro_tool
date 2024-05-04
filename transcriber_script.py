@@ -10,6 +10,7 @@ class Transcriber:
         #self.whisper_model = 'base'
         
     def run(self):
+        @st.cache_resource(show_spinner=False)
         st.title("Whisper")
         st.subheader(
             """
@@ -20,8 +21,16 @@ class Transcriber:
 
         self.whisper_model = st.sidebar.selectbox("Whisper model", options=[
             "tiny", "base", "small", "medium", "large", "large-v2", "large-v3"], index=4)
-        self.model = whisper.load_model(self.whisper_model)
-        self.result = self.model.transcribe(
-                    audio=self.input_file)
+        
+    def load_whisper_model(modelName: str) -> whisper.Whisper:
+        try:
+            global model
+            model = whisper.load_model(modelName)
+            print("Model Loaded")
+            print("-------------------------")
+            return model
+        except Exception as e:
+        st.error(f"Failed to load Whisper model: {e}", icon="❌")
+    
         
    
