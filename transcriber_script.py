@@ -1,6 +1,6 @@
 import whisper
 import streamlit as st
-import torch
+#import torch
 
 model: whisper.Whisper = None
 modelName: str = "base.en"
@@ -16,15 +16,15 @@ class Transcriber:
             print("Model Loaded")
             print("-------------------------")
             return model
-        except Exception as e:
+        except Exception as e:x
             st.error(f"Failed to load Whisper model: {e}", icon="❌")
         
     def run(self):
         st.title("Whisper")
         st.subheader(
             """
-                    Я могу писать транскрибировать аудио и видеофайлы (получать текст).
-                     """
+            Я могу писать транскрибировать аудио и видеофайлы (получать текст).
+            """
         )
         self.input_file = st.sidebar.file_uploader("Files", type=["mp4", "m4a", "mp3", "wav"])
 
