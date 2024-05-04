@@ -5,9 +5,7 @@ import torch
 class Transcriber:
     def __init__(self):
         self.test = 'asdas',
-        self.whisper_model = "base"#, whisper_model: str, translation: bool):
-        #self.translation = False
-        #self.whisper_model = 'base'
+        self.whisper_model = "base"
         
     def load_whisper_model(modelName: str) -> whisper.Whisper:
         try:
@@ -17,7 +15,7 @@ class Transcriber:
             print("-------------------------")
             return model
         except Exception as e:
-        st.error(f"Failed to load Whisper model: {e}", icon="❌")
+            st.error(f"Failed to load Whisper model: {e}", icon="❌")
         
     def run(self):
         st.title("Whisper")
