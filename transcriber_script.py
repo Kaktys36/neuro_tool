@@ -10,7 +10,6 @@ class Transcriber:
         #self.whisper_model = 'base'
         
     def run(self):
-        @st.cache_resource(show_spinner=False)
         st.title("Whisper")
         st.subheader(
             """
