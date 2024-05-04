@@ -20,6 +20,13 @@ class Transcriber:
 
         whisper_model = st.sidebar.selectbox("Whisper model", options=[
             "tiny", "base", "small", "medium", "large", "large-v2", "large-v3"], index=4)
-        device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        model = whisper.load_model(whisper_model).to('cpu')
-        st.text(device)
+        @st.cache_resource(show_spinner=False)
+    def load_whisper_model(whisper_model: str) -> whisper.Whisper:
+        try:
+            global model
+            model = whisper.load_model(whisper_model)
+            print("Model Loaded")
+            print("-------------------------")
+            return model
+        except Exception as e:
+            st.error(f"Failed to load Whisper model: {e}", icon="❌")
