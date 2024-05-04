@@ -24,7 +24,7 @@ class Transcriber:
     def load_whisper_model(whisper_model: str) -> whisper.Whisper:
         try:
             global model
-            model = whisper.load_model(self.whisper_model)
+            model = whisper.load_model(whisper_model)
             print("Model Loaded")
             print("-------------------------")
             return model
