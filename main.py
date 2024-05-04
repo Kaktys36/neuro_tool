@@ -30,7 +30,7 @@ elif selected_model == "YOLO8_face_detector":  # Тоже самое, тольк
     
 elif selected_model == "Whisper":  # Тоже самое, только для класса FaceDetector c YOLO8
     transcriber = Transcriber()
-    Transcriber.run()
+    transcriber.run()
     show_start_page = False
     
 else:
