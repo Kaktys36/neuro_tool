@@ -7,12 +7,11 @@ class Transcriber:
     def __init__(self):
         self.test = 'asdas',
         self.whisper_model = "base"
-       # @st.cache_resource(show_spinner=False)
         
-    def load_whisper_model(self, whisper_model: str):
+    def load_whisper_model(self, whisper_model):
         try:
             global model
-            model = whisper.load_model(whisper_model)
+            model = whisper.load_model(self.whisper_model)
             print("Model Loaded")
             print("-------------------------")
             return model
