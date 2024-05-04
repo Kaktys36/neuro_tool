@@ -2,6 +2,8 @@ import whisper
 import streamlit as st
 import torch
 
+model: whisper.Whisper = None
+modelName: str = "base.en"
 class Transcriber:
     def __init__(self):
         self.test = 'asdas',
