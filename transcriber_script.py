@@ -7,7 +7,7 @@ class Transcriber:
         self.test = 'asdas',
         self.whisper_model = "base"
         
-    def load_whisper_model(modelName: str) -> whisper.Whisper:
+    def load_whisper_model(modelName: str):# -> whisper.Whisper:
         try:
             global model
             model = whisper.load_model(modelName)
