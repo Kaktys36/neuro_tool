@@ -1,6 +1,5 @@
 import whisper
 import streamlit as st
-from whisper import load_whisper_model
 import torch
 
 class Transcriber:
