@@ -21,7 +21,7 @@ class Transcriber:
         self.whisper_model = st.sidebar.selectbox("Whisper model", options=[
             "tiny", "base", "small", "medium", "large", "large-v2", "large-v3"], index=4)
         
-    def load_whisper_model(whisper_model: str) -> whisper.Whisper:
+    def load_whisper_model(whisper_model: str):
         try:
             global model
             model = whisper.load_model(whisper_model)
